@@ -61,8 +61,8 @@ class InteractiveRecord
   end
 
   def self.find_by(option)
-    property = option.map{|prop, val| prop.to_s}.first
-    value = option.map{|prop, val| val}.first
+    property = option.keys.first.to_s
+    value = option.values.first
     #binding.pry
     sql = "SELECT * FROM #{self.table_name} WHERE #{property} = ?"
     #binding.pry
